@@ -8,8 +8,9 @@
     --color-fondo: #f8f9fa; /* Fondo muy claro */
     --color-texto: #343a40; /* Texto oscuro */
     --color-claro: #ffffff; /* Blanco */
-    /* Color de contraste para el botón de video */
-    --color-video-btn: #dc3545; /* Rojo de contraste */
+    
+    /* Nuevo color de contraste para el botón de video (Rojo) */
+    --color-video-btn: #dc3545; 
 
     /* Fuente */
     --fuente-principal: 'Montserrat', sans-serif;
@@ -73,69 +74,69 @@ h1, h2, h3 {
     /* filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); */
 }
 
-/* Contenedor de Botones (Para que se vean en línea) */
-.hero-content .install-btn,
-.hero-content .video-btn {
-    /* Resetear el margen superior que tenías en el .video-btn */
-    margin-top: 0;
-    margin: 0 10px 20px 10px; /* Margen para separarlos entre sí y del texto */
+/* GRUPO DE BOTONES: ALINEACIÓN HORIZONTAL */
+.button-group {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical (si los botones tuvieran diferente altura) */
+    margin-bottom: 10px; 
+    flex-wrap: wrap; /* Permite que los botones se apilen en pantallas pequeñas */
 }
 
-/* Botón de Instalación */
-.install-btn {
+/* ESTILOS COMUNES PARA AMBOS BOTONES */
+.install-btn, .video-btn {
     display: inline-block;
-    background-color: var(--color-secundario);
     color: var(--color-claro);
     text-decoration: none;
     padding: 15px 30px;
-    border-radius: 50px; /* Borde redondo para un look amigable */
+    border-radius: 50px; /* Borde redondo para un look amigable y similar */
     font-weight: 700;
     font-size: 1.1em;
     letter-spacing: 1px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     border: none;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para que destaque */
+    margin: 10px; /* Separación uniforme entre los botones */
 }
 
-/* *** ANIMACIÓN BÁSICA DEL BOTÓN AL PASAR EL MOUSE (IMPORTANTE) *** */
+/* Botón de Instalación (Verde) */
+.install-btn {
+    background-color: var(--color-secundario);
+}
+
+/* *** ANIMACIÓN HOVER (Instalar) *** */
 .install-btn:hover {
     background-color: #1e7e34; /* Un verde un poco más oscuro */
     transform: translateY(-3px); /* Pequeño levantamiento */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Animación de pulsación para el botón */
-.install-btn:active {
-    transform: translateY(0);
-}
-
-/* =================================== */
-/* ESTILOS PARA EL NUEVO BOTÓN DE VIDEO */
-/* =================================== */
+/* Botón del Video Comercial (Rojo) */
 .video-btn {
-    display: inline-block;
     background-color: var(--color-video-btn); /* Color de contraste (Rojo) */
-    color: var(--color-claro);
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 50px; /* Igual forma que el botón de instalar */
-    font-weight: 700;
-    font-size: 1.1em;
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    border: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Misma sombra */
 }
 
+/* *** ANIMACIÓN HOVER (Video) *** */
 .video-btn:hover {
     background-color: #bd2130; /* Tono más oscuro de rojo */
     transform: translateY(-3px); /* Mismo efecto de levantamiento */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.video-btn:active {
+/* Animación de pulsación para ambos */
+.install-btn:active, .video-btn:active {
     transform: translateY(0);
 }
+
+/* Texto de disponibilidad debajo de los botones */
+.store-availability {
+    display: block; /* Asegura que ocupe toda la línea y el texto esté centrado */
+    margin-top: 5px; 
+    margin-bottom: 20px; 
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8); /* Color más tenue en el fondo del hero */
+}
+
 
 /* =================================== */
 /* 2. SECCIÓN DE CARACTERÍSTICAS */
@@ -216,36 +217,30 @@ footer {
     font-size: 0.9em;
 }
 
+
 /* =================================== */
 /* MEDIA QUERIES (RESPONSIVE DESIGN) */
 /* =================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .hero h2 {
         font-size: 2em;
     }
 
-    /* En pantallas pequeñas, apilamos los botones verticalmente */
-    .hero-content .install-btn,
-    .hero-content .video-btn {
-        display: block; /* Ocupan todo el ancho */
-        width: 80%; /* Ancho controlado */
-        margin: 10px auto; /* Centrar verticalmente y añadir margen */
+    /* Forzamos que los botones se apilen uno debajo del otro en lugar de lado a lado */
+    .button-group {
+        flex-direction: column;
     }
-}
+    
+    /* Para que los botones llenen el ancho si se apilan */
+    .install-btn,
+    .video-btn {
+        width: 80%; /* Controlamos el ancho */
+        max-width: 300px;
+        margin: 8px 0; /* Ajustamos el margen */
+    }
 
-
-/* =================================== */
-/* *** LUGAR PARA ANIMACIONES AVANZADAS *** */
-/* =================================== */
-
-/* Ejemplo de animación de aparición suave para el contenido */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.hero-content, .features-grid {
-    animation: fadeIn 1s ease-out;
-
+    .hero-content .store-availability {
+        margin-top: 15px; /* Más espacio entre el último botón y el texto */
+    }
 }
