@@ -177,6 +177,37 @@ footer {
     font-size: 0.9em;
 }
 
+/* Estilos para el nuevo botón de video (ajustados para verse similar al de instalar) */
+.video-btn {
+    display: inline-block; /* Mismo que install-btn */
+    padding: 15px 30px; /* Mismo que install-btn */
+    margin-top: 15px; /* Separación del botón de instalar */
+    border-radius: 5px; /* Mismo que install-btn */
+    font-size: 1.1em; /* Mismo que install-btn */
+    font-weight: 700; /* Mismo que install-btn */
+    text-decoration: none; /* Mismo que install-btn */
+    text-transform: uppercase; /* Opcional, para mantener la uniformidad */
+    transition: background-color 0.3s ease; /* Mismo que install-btn */
+    
+    /* Colores del botón de video - puedes usar los mismos o unos diferentes */
+    background-color: #5cb85c; /* Un verde distinto o un color secundario */
+    color: white; 
+    border: 2px solid #5cb85c; /* Borde del mismo color */
+}
+
+/* Estilo al pasar el ratón (Hover) */
+.video-btn:hover {
+    background-color: #4cae4c; /* Oscurecer un poco al pasar el ratón */
+    color: white;
+}
+
+/* Ajuste para centrar correctamente los botones en el hero-content */
+.hero-content .install-btn,
+.hero-content .video-btn {
+    margin-right: 10px; /* Separación entre el botón de instalar y el de video */
+    margin-left: 10px;
+}
+
 /* =================================== */
 /* *** LUGAR PARA ANIMACIONES AVANZADAS *** */
 /* =================================== */
@@ -189,4 +220,5 @@ footer {
 
 .hero-content, .features-grid {
     animation: fadeIn 1s ease-out;
+
 }
