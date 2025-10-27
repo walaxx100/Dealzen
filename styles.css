@@ -8,6 +8,8 @@
     --color-fondo: #f8f9fa; /* Fondo muy claro */
     --color-texto: #343a40; /* Texto oscuro */
     --color-claro: #ffffff; /* Blanco */
+    /* Color de contraste para el botón de video */
+    --color-video-btn: #dc3545; /* Rojo de contraste */
 
     /* Fuente */
     --fuente-principal: 'Montserrat', sans-serif;
@@ -70,6 +72,15 @@ h1, h2, h3 {
     /* Aplicar un pequeño 'drop shadow' si el fondo del logo es transparente */
     /* filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); */
 }
+
+/* Contenedor de Botones (Para que se vean en línea) */
+.hero-content .install-btn,
+.hero-content .video-btn {
+    /* Resetear el margen superior que tenías en el .video-btn */
+    margin-top: 0;
+    margin: 0 10px 20px 10px; /* Margen para separarlos entre sí y del texto */
+}
+
 /* Botón de Instalación */
 .install-btn {
     display: inline-block;
@@ -95,6 +106,34 @@ h1, h2, h3 {
 
 /* Animación de pulsación para el botón */
 .install-btn:active {
+    transform: translateY(0);
+}
+
+/* =================================== */
+/* ESTILOS PARA EL NUEVO BOTÓN DE VIDEO */
+/* =================================== */
+.video-btn {
+    display: inline-block;
+    background-color: var(--color-video-btn); /* Color de contraste (Rojo) */
+    color: var(--color-claro);
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px; /* Igual forma que el botón de instalar */
+    font-weight: 700;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Misma sombra */
+}
+
+.video-btn:hover {
+    background-color: #bd2130; /* Tono más oscuro de rojo */
+    transform: translateY(-3px); /* Mismo efecto de levantamiento */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.video-btn:active {
     transform: translateY(0);
 }
 
@@ -161,7 +200,7 @@ h1, h2, h3 {
 }
 
 .secondary-btn {
-    /* Estilo del botón de instalación, pero con colores invertidos o de acento */
+    /* Estilo del botón de instalación, pero con el color primario (Azul) */
     background-color: var(--color-primario);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -177,36 +216,24 @@ footer {
     font-size: 0.9em;
 }
 
-/* Estilos para el nuevo botón de video (ajustados para verse similar al de instalar) */
-.video-btn {
-    display: inline-block; /* Mismo que install-btn */
-    padding: 15px 30px; /* Mismo que install-btn */
-    margin-top: 15px; /* Separación del botón de instalar */
-    border-radius: 5px; /* Mismo que install-btn */
-    font-size: 1.1em; /* Mismo que install-btn */
-    font-weight: 700; /* Mismo que install-btn */
-    text-decoration: none; /* Mismo que install-btn */
-    text-transform: uppercase; /* Opcional, para mantener la uniformidad */
-    transition: background-color 0.3s ease; /* Mismo que install-btn */
-    
-    /* Colores del botón de video - puedes usar los mismos o unos diferentes */
-    background-color: #5cb85c; /* Un verde distinto o un color secundario */
-    color: white; 
-    border: 2px solid #5cb85c; /* Borde del mismo color */
+/* =================================== */
+/* MEDIA QUERIES (RESPONSIVE DESIGN) */
+/* =================================== */
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    /* En pantallas pequeñas, apilamos los botones verticalmente */
+    .hero-content .install-btn,
+    .hero-content .video-btn {
+        display: block; /* Ocupan todo el ancho */
+        width: 80%; /* Ancho controlado */
+        margin: 10px auto; /* Centrar verticalmente y añadir margen */
+    }
 }
 
-/* Estilo al pasar el ratón (Hover) */
-.video-btn:hover {
-    background-color: #4cae4c; /* Oscurecer un poco al pasar el ratón */
-    color: white;
-}
-
-/* Ajuste para centrar correctamente los botones en el hero-content */
-.hero-content .install-btn,
-.hero-content .video-btn {
-    margin-right: 10px; /* Separación entre el botón de instalar y el de video */
-    margin-left: 10px;
-}
 
 /* =================================== */
 /* *** LUGAR PARA ANIMACIONES AVANZADAS *** */
