@@ -10,7 +10,7 @@
     --color-claro: #ffffff; /* Blanco */
     
     /* Nuevo color de contraste para el botón de video (Rojo) */
-    --color-video-btn: #dc3545; 
+    --color-video-btn: #B8B6B6; 
 
     /* Fuente */
     --fuente-principal: 'Montserrat', sans-serif;
@@ -244,3 +244,4 @@ footer {
         margin-top: 15px; /* Más espacio entre el último botón y el texto */
     }
 }
+
