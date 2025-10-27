@@ -118,7 +118,7 @@ h1, h2, h3 {
 
 /* *** ANIMACIÓN HOVER (Video) *** */
 .video-btn:hover {
-    background-color: #bd2130; /* Tono más oscuro de rojo */
+    background-color: #1e7e34; /* Tono más oscuro de rojo */
     transform: translateY(-3px); /* Mismo efecto de levantamiento */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
@@ -244,4 +244,5 @@ footer {
         margin-top: 15px; /* Más espacio entre el último botón y el texto */
     }
 }
+
 
