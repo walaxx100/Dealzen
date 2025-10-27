@@ -1,0 +1,192 @@
+/* =================================== */
+/* VARIABLES DE DISEÑO     */
+/* =================================== */
+:root {
+    /* *** ¡Ajustar con los colores de tu marca! *** */
+    --color-primario: #007BFF; /* Azul de ejemplo (COLOR PRINCIPAL) */
+    --color-secundario: #28a745; /* Verde de ejemplo (COLOR DEL BOTÓN/ACCENTO) */
+    --color-fondo: #f8f9fa; /* Fondo muy claro */
+    --color-texto: #343a40; /* Texto oscuro */
+    --color-claro: #ffffff; /* Blanco */
+
+    /* Fuente */
+    --fuente-principal: 'Montserrat', sans-serif;
+}
+
+/* =================================== */
+/* ESTILOS GENERALES          */
+/* =================================== */
+body {
+    font-family: var(--fuente-principal);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    text-align: center; /* Centrar todo para un look moderno */
+}
+
+/* Títulos */
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--color-texto);
+}
+
+/* =================================== */
+/* 1. SECCIÓN PRINCIPAL (HERO)*/
+/* =================================== */
+.hero {
+    background-color: var(--color-primario);
+    color: var(--color-claro);
+    padding: 100px 20px;
+    /* Efecto de degradado suave (opcional) */
+    background-image: linear-gradient(135deg, var(--color-primario) 0%, #0056b3 100%); 
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--color-claro);
+}
+
+.hero p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+.logo-container {
+    margin-bottom: 30px; /* Espacio debajo del logo y antes del título */
+}
+
+.company-logo {
+    /* Ajusta este valor al tamaño que quieras que tenga tu logo */
+    max-width: 250px; 
+    height: auto;
+    /* Aplicar un pequeño 'drop shadow' si el fondo del logo es transparente */
+    /* filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); */
+}
+/* Botón de Instalación */
+.install-btn {
+    display: inline-block;
+    background-color: var(--color-secundario);
+    color: var(--color-claro);
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px; /* Borde redondo para un look amigable */
+    font-weight: 700;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para que destaque */
+}
+
+/* *** ANIMACIÓN BÁSICA DEL BOTÓN AL PASAR EL MOUSE (IMPORTANTE) *** */
+.install-btn:hover {
+    background-color: #1e7e34; /* Un verde un poco más oscuro */
+    transform: translateY(-3px); /* Pequeño levantamiento */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación de pulsación para el botón */
+.install-btn:active {
+    transform: translateY(0);
+}
+
+/* =================================== */
+/* 2. SECCIÓN DE CARACTERÍSTICAS */
+/* =================================== */
+.features {
+    padding: 60px 20px;
+    background-color: var(--color-claro);
+}
+
+.features h3 {
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    background-color: var(--color-fondo);
+    padding: 30px;
+    border-radius: 10px;
+    flex: 1 1 300px; /* Flexibilidad para 3 columnas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* *** ANIMACIÓN DEL HOVER DE LAS CARACTERÍSTICAS *** */
+.feature-item:hover {
+    transform: translateY(-5px); /* Pequeño levantamiento al pasar el mouse */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item h4 {
+    color: var(--color-primario);
+    margin: 15px 0 10px;
+}
+
+.icon {
+    font-size: 2.5em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* =================================== */
+/* 3. SECCIÓN CTA/FOOTER      */
+/* =================================== */
+.cta {
+    background-color: #e9ecef;
+    padding: 50px 20px;
+    margin-top: 50px;
+}
+
+.cta p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.secondary-btn {
+    /* Estilo del botón de instalación, pero con colores invertidos o de acento */
+    background-color: var(--color-primario);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    padding: 20px;
+    background-color: var(--color-texto);
+    color: var(--color-fondo);
+    font-size: 0.9em;
+}
+
+/* =================================== */
+/* *** LUGAR PARA ANIMACIONES AVANZADAS *** */
+/* =================================== */
+
+/* Ejemplo de animación de aparición suave para el contenido */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content, .features-grid {
+    animation: fadeIn 1s ease-out;
+}
